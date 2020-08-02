@@ -28,7 +28,7 @@
                 if ($header_transaksi) {
                 ?>
 
-                    <table class="table table-bordered">
+                    <table class="table table-responsive table-bordered">
                         <thead>
                             <tr>
                                 <th width="20%">KODE TRANSAKSI</th>
@@ -51,7 +51,7 @@
                         </tbody>
                     </table>
 
-                    <table class="table table-hover" width="100%">
+                    <table class="table table-responsive">
                         <thead>
                             <tr class="bg-success">
                                 <th class="text-center">NO</th>
