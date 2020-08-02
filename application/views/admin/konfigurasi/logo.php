@@ -38,7 +38,7 @@ echo form_open_multipart(base_url('admin/konfigurasi/logo'), ' class="form-horiz
             <div class="col-sm-9 col-md-9 col-lg-8">
                 <input type="file" name="logo" class="form-control" placeholder="Upload Logo Baru" value="<?php echo $konfigurasi->logo ?>" required><br>
                 Logo lama:
-                <div class="card" style="width: 20rem;">
+                <div class="card col-auto" style="width: 20rem;">
                     <img src="<?php echo base_url('assets/upload/image/' . $konfigurasi->logo) ?>" class="img img-responsive img-thumbnail shadow">
                 </div>
             </div>

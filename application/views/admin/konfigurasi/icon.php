@@ -38,7 +38,7 @@ echo form_open_multipart(base_url('admin/konfigurasi/icon'), ' class="form-horiz
             <div class="col-sm-9 col-md-9 col-lg-8">
                 <input type="file" name="icon" class="form-control" placeholder="Upload Icon Baru" value="<?php echo $konfigurasi->icon ?>" required><br>
                 Icon lama:
-                <div class="card" style="width: 15rem;">
+                <div class="card col-auto" style="width: 15rem;">
                     <img src="<?php echo base_url('assets/upload/image/' . $konfigurasi->icon) ?>" class="img img-responsive img-thumbnail shadow">
                 </div>
             </div>
