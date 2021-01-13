@@ -15,6 +15,13 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
+                <!-- Button View Site -->
+                <li class="nav-item no-arrow mx-1">
+                    <div class="nav-link">
+                        <a href="<?php base_url(); ?>" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> View Site</a>
+                    </div>
+                </li>
+
                 <div class="topbar-divider d-none d-sm-block"></div>
 
                 <!-- Nav Item - User Information -->
