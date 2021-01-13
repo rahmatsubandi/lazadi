@@ -32,7 +32,7 @@
                                 <img src="<?php echo base_url('assets/upload/image/' . $produk->gambar) ?>" alt="<?php echo $produk->nama_produk ?>">
 
                                 <div class="block2-overlay trans-0-4">
-                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                    <a href="<?php echo base_url('produk/detail/' . $produk->slug_produk) ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
                                         <i class="fa fa-eye" aria-hidden="true"></i>
                                         <i class="fa fa-eye dis-none" aria-hidden="true"></i>
                                     </a>

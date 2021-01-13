@@ -158,7 +158,7 @@ $nav_produk_footer  = $this->konfigurasi_model->nav_produk(); // Diambil dari mo
     $('.block2-btn-addwishlist').each(function() {
         var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
         $(this).on('click', function() {
-            swal(nameProduct, "click again, it will go to the detail page !", "success");
+            swal(nameProduct, "Click again, it will go to the detail page!", "success");
         });
     });
 </script>
