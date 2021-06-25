@@ -37,9 +37,24 @@
                             <td>
                                 <img src="<?php echo base_url('assets/upload/image/thumbs/' . $produk->gambar) ?>" class="img img-responsive img-thumbnail" width="120">
                             </td>
-                            <td><?php echo $produk->nama_produk ?></td>
+                            <td><?php echo $produk->nama_produk ?>
+                                <br>Stok Produk: <?php echo $produk->stok ?>
+                                <br>Stok Minimal: <?php echo $produk->stok_minimal ?>
+                            </td>
                             <td><?php echo $produk->nama_kategori ?></td>
-                            <td><?php echo number_format($produk->harga, '0', ',', '.') ?></td>
+                            <td>Harga Jual: <?php echo number_format($produk->harga, '0', ',', '.') ?>
+                                <br>Harga Beli: <?php echo number_format($produk->harga_beli, '0', ',', '.') ?>
+                                <br>Harga Diskon: <?php echo number_format($produk->harga_diskon, '0', ',', '.') ?>
+                                <br>Periode Diskon: <?php if ($produk->tanggal_mulai_diskon == "") {
+                                                        echo set_value('tanggal_mulai_diskon');
+                                                    } else {
+                                                        echo date('d M Y', strtotime($produk->tanggal_mulai_diskon));
+                                                    } ?> s.d. <?php if ($produk->tanggal_selesai_diskon == "") {
+                                                                    echo set_value('tanggal_selesai_diskon');
+                                                                } else {
+                                                                    echo date('d M Y', strtotime($produk->tanggal_selesai_diskon));
+                                                                } ?>
+                            </td>
                             <td><?php echo $produk->status_produk ?></td>
                             <td>
                                 <a href="<?php echo base_url('admin/produk/gambar/' . $produk->id_produk) ?>" class="btn btn-info btn-circle btn-sm">

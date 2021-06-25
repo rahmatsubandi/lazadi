@@ -50,13 +50,47 @@ echo form_open_multipart(base_url('admin/produk/edit/' . $produk->id_produk), ' 
             <label class="col-auto control-label">Harga Produk</label>
             <div class="col-sm-9 col-md-9 col-lg-8">
                 <input type="number" name="harga" class="form-control" placeholder="Harga Produk" value="<?php echo $produk->harga ?>" required>
+                <small class="text-success">Harga Jual Produk</small>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-8">
+                <input type="number" name="harga_beli" class="form-control" placeholder="Harga Beli" value="<?php echo $produk->harga_beli ?>" required>
+                <small class="text-success">Harga Pembelian Produk</small>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="col-auto control-label">Stok Produk</label>
+            <label class="col-auto control-label">Harga Diskon Produk</label>
+            <div class="col-sm-9 col-md-9 col-lg-8 ">
+                <input type="number" name="harga_diskon" class="form-control" placeholder="Harga Diskon" value="<?php echo $produk->harga_diskon ?>" required>
+                <small class="text-danger">Harga Diskon</small>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-8 ">
+                <input type="text" name="tanggal_mulai_diskon" class="form-control datepicker" placeholder="dd-mm-yyyy" value="<?php if ($produk->tanggal_mulai_diskon == "") {
+                                                                                                                                    echo set_value('tanggal_mulai_diskon');
+                                                                                                                                } else {
+                                                                                                                                    echo date('d-m-Y', strtotime($produk->tanggal_mulai_diskon));
+                                                                                                                                } ?>" required>
+                <small class="text-success">Tanggal mulai diskon</small>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-8 ">
+                <input type="text" name="tanggal_selesai_diskon" class="form-control datepicker" placeholder="dd-mm-yyyy" value="<?php if ($produk->tanggal_selesai_diskon == "") {
+                                                                                                                                        echo set_value('tanggal_selesai_diskon');
+                                                                                                                                    } else {
+                                                                                                                                        echo date('d-m-Y', strtotime($produk->tanggal_selesai_diskon));
+                                                                                                                                    } ?>" required>
+                <small class="text-success">Tanggal selesai diskon</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-auto control-label">Stok Produk &amp; Stok Minimal</label>
             <div class="col-sm-9 col-md-9 col-lg-8">
                 <input type="number" name="stok" class="form-control" placeholder="Stok Produk" value="<?php echo $produk->stok ?>" required>
+                <small class="text-warning">Stok Produk Saat ini</small>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-8">
+                <input type="number" name="stok_minimal" class="form-control" placeholder="Stok Minimal Produk" value="<?php echo $produk->stok_minimal ?>" required>
+                <small class="text-warning">Stok Minimal Produk</small>
             </div>
         </div>
 

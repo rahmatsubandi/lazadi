@@ -18,7 +18,7 @@
                 <!-- Button View Site -->
                 <li class="nav-item no-arrow mx-1">
                     <div class="nav-link">
-                        <a href="<?php base_url(); ?>" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-eye"></i> View Site</a>
+                        <a href="<?php echo base_url(); ?>" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-eye"></i> View Site</a>
                     </div>
                 </li>
 

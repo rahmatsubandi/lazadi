@@ -68,10 +68,18 @@
      //  Datepicker
      $('.datepicker').daterangepicker({
          singleDatePicker: true,
+         autoUpdateInput: false,
          //  format tanggal Indonesia
          locale: {
              format: 'DD-MM-YYYY'
          }
+     });
+     $('.datepicker').on('apply.daterangepicker', function(ev, picker) {
+         $(this).val(picker.startDate.format('DD-MM-YYYY'));
+     });
+
+     $('.datepicker').on('cancel.daterangepicker', function(ev, picker) {
+         $(this).val('');
      });
  </script>
 

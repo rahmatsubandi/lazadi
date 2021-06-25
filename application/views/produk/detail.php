@@ -63,7 +63,7 @@
             ?>
 
             <span class="m-text15">
-                IDR <?php echo number_format($produk->harga, '0', ',', '.') ?>
+                Rp. <?php echo number_format($produk->harga, '0', ',', '.') ?>
             </span>
 
             <p class="s-text8 p-t-10">
@@ -173,7 +173,7 @@
                                 </a>
 
                                 <span class="block2-price m-text6 p-r-5">
-                                    IDR <?php echo number_format($produk_related->harga, '0', ',', '.') ?>
+                                    Rp. <?php echo number_format($produk_related->harga, '0', ',', '.') ?>
                                 </span>
                             </div>
                         </div>
