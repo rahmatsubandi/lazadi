@@ -56,15 +56,30 @@
             // Elemen yang dibawa
             echo form_hidden('id', $produk->id_produk);
             // echo form_hidden('qty', 1);
-            echo form_hidden('price', $produk->harga);
+            // Jika ada diskon
+            if (strtotime($produk->tanggal_mulai_diskon) <= strtotime(date('Y-m-d')) && strtotime($produk->tanggal_selesai_diskon) >= strtotime(date('Y-m-d'))) {
+                echo form_hidden('price', $produk->harga_diskon);
+            } else {
+                // Harga Tanpa Diskon
+                echo form_hidden('price', $produk->harga);
+            }
             echo form_hidden('name', $produk->nama_produk);
             // Elemen Redirect
             echo form_hidden('redirect_page', str_replace('index.php/', '', current_url())); //Fungsinya setelah tambah belanjaan maka balik kehalaman yang sedang di akses.
             ?>
 
-            <span class="m-text15">
-                Rp. <?php echo number_format($produk->harga, '0', ',', '.') ?>
-            </span>
+            <?php if (strtotime($produk->tanggal_mulai_diskon) <= strtotime(date('Y-m-d')) && strtotime($produk->tanggal_selesai_diskon) >= strtotime(date('Y-m-d'))) { ?>
+                <span class="block2-oldprice m-text7 p-r-5">
+                    Rp. <?php echo number_format($produk->harga, '0', ',', '.') ?>
+                </span>
+                <span class="block2-newprice m-text15 p-r-5">
+                    Rp. <?php echo number_format($produk->harga_diskon, '0', ',', '.') ?>
+                </span>
+            <?php } else { ?>
+                <span class="block2-price m-text15 p-r-5">
+                    Rp. <?php echo number_format($produk->harga, '0', ',', '.') ?>
+                </span>
+            <?php } ?>
 
             <p class="s-text8 p-t-10">
                 <?php echo $produk->keterangan ?>
