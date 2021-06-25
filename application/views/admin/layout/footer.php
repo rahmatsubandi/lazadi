@@ -49,6 +49,12 @@
  <!-- Core plugin JavaScript-->
  <script src="<?php echo base_url() ?>assets/sbadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
+ <!-- Daterangepicker -->
+ <script src="<?php echo base_url() ?>assets/sbadmin/vendor/daterangepicker/moment.min.js"></script>
+ <script src="<?php echo base_url() ?>assets/sbadmin/vendor/daterangepicker/daterangepicker.js"></script>
+ <!-- Datepicker -->
+ <script src="<?php echo base_url() ?>assets/sbadmin/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+
  <!-- Custom scripts for all pages-->
  <script src="<?php echo base_url() ?>assets/sbadmin/js/sb-admin-2.min.js"></script>
  <!-- Page level plugins -->
@@ -57,6 +63,17 @@
 
  <!-- Page level custom scripts -->
  <script src="<?php echo base_url() ?>assets/sbadmin/js/demo/datatables-demo.js"></script>
+
+ <script>
+     //  Datepicker
+     $('.datepicker').daterangepicker({
+         singleDatePicker: true,
+         //  format tanggal Indonesia
+         locale: {
+             format: 'DD-MM-YYYY'
+         }
+     });
+ </script>
 
  </body>
 

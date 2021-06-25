@@ -18,6 +18,11 @@
 
     <!-- Custom styles for this page -->
     <link href="<?php echo base_url() ?>assets/sbadmin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- Daterangepicker -->
+    <link href="<?php echo base_url() ?>assets/sbadmin/vendor/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Datepicker -->
+    <link href="<?php echo base_url() ?>assets/sbadmin/vendor/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url() ?>assets/sbadmin/css/sb-admin-2.min.css" rel="stylesheet">
 

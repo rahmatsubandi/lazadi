@@ -46,16 +46,42 @@ echo form_open_multipart(base_url('admin/produk/tambah'), ' class="form-horizont
         </div>
 
         <div class="form-group">
-            <label class="col-auto control-label">Harga Produk</label>
+            <label class="col-auto control-label">Harga Produk &amp; Harga Beli</label>
             <div class="col-sm-9 col-md-9 col-lg-8 ">
                 <input type="number" name="harga" class="form-control" placeholder="Harga Produk" value="<?php echo set_value('harga') ?>" required>
+                <small class="text-danger">Harga Jual Produk</small>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-8 ">
+                <input type="number" name="harga_beli" class="form-control" placeholder="Harga Beli" value="<?php echo set_value('harga_beli') ?>" required>
+                <small class="text-success">Harga Pembelian</small>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="col-auto control-label">Stok Produk</label>
+            <label class="col-auto control-label">Harga Diskon Produk</label>
+            <div class="col-sm-9 col-md-9 col-lg-8 ">
+                <input type="number" name="harga_diskon" class="form-control" placeholder="Harga Diskon" value="<?php echo set_value('harga_diskon') ?>" required>
+                <small class="text-danger">Harga Diskon</small>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-8 ">
+                <input type="text" name="tanggal_mulai_diskon" class="form-control datepicker" placeholder="dd-mm-yyyy" value="<?php echo set_value('tanggal_mulai_diskon') ?>" required>
+                <small class="text-success">Tanggal mulai diskon</small>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-8 ">
+                <input type="text" name="tanggal_selesai_diskon" class="form-control datepicker" placeholder="dd-mm-yyyy" value="<?php echo set_value('tanggal_selesai_diskon') ?>" required>
+                <small class="text-success">Tanggal selesai diskon</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-auto control-label">Stok Produk &amp; Stok Minimal</label>
             <div class="col-sm-9 col-md-9 col-lg-8 ">
                 <input type="number" name="stok" class="form-control" placeholder="Stok Produk" value="<?php echo set_value('stok') ?>" required>
+                <small class="text-danger">Jumlah stok produk</small>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-8 ">
+                <input type="number" name="stok_minimal" class="form-control" placeholder="Stok Minimal" value="<?php echo set_value('stok_minimal') ?>" required>
+                <small class="text-danger">Jumlah stok minimal bisa di pesan</small>
             </div>
         </div>
 
