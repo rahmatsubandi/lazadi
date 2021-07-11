@@ -1,14 +1,16 @@
 <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
-<div class="container">
-    <?php
-    //Notifikasi
-    if ($this->session->flashdata('sukses')) {
-        echo '<div class="alert alert-success">';
-        echo $this->session->flashdata('sukses');
-        echo '</div>';
-    }
-    ?>
-</div>
+<?php
+//Notifikasi
+if ($this->session->flashdata('sukses')) {
+    echo '<div class="alert alert-success">';
+    echo $this->session->flashdata('sukses');
+    echo '</div>';
+} elseif ($this->session->flashdata('warning')) {
+    echo '<div class="alert alert-warning">';
+    echo $this->session->flashdata('warning');
+    echo '</div>';
+}
+?>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <a href="<?php echo base_url('admin/user/tambah') ?>" class="btn btn-primary">
@@ -32,7 +34,7 @@
                     <?php $no = 1;
                     foreach ($user as $user) { ?>
                         <tr>
-                            <td><?php echo $no ?></td>
+                            <td><?php echo $no++ ?></td>
                             <td><?php echo $user->nama ?></td>
                             <td><?php echo $user->email ?></td>
                             <td><?php echo $user->username ?></td>

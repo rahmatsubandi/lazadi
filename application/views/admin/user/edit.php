@@ -36,7 +36,7 @@ echo form_open(base_url('admin/user/edit/' . $user->id_user), ' class="form-hori
         <div class="form-group">
             <label class="col-auto control-label">Password</label>
             <div class="col-sm-9 col-md-9 col-lg-8">
-                <input type="password" name="password" class="form-control" placeholder="Password" value="<?php echo $user->password ?>" required>
+                <input type="password" name="password" class="form-control" placeholder="Password" data-toggle="tooltip" data-placement="top" title="Jika password yang diketik kurang dari 6 karakter, password secara otomatis tidak akan di ganti">
             </div>
         </div>
 

@@ -60,8 +60,11 @@ class User extends CI_Controller
         $valid->set_rules(
             'password',
             'Password',
-            'required',
-            array('required' => '%s harus diisi')
+            'required|min_length[6]',
+            array(
+                'required' => '%s harus diisi',
+                'min_length' => '%s minimal 6 karakter',
+            )
         );
 
         if ($valid->run() === FALSE) {
@@ -110,13 +113,6 @@ class User extends CI_Controller
             array('required' => '%s harus diisi', 'valid_email' => '%s tidak valid')
         );
 
-        $valid->set_rules(
-            'password',
-            'Password',
-            'required',
-            array('required' => '%s harus diisi')
-        );
-
         if ($valid->run() === FALSE) {
             // End Validasi
 
@@ -129,14 +125,29 @@ class User extends CI_Controller
             // Masuk database
         } else {
             $i = $this->input;
-            $data = array(
-                'id_user'     => $id_user,
-                'nama'        => $i->post('nama'),
-                'email'       => $i->post('email'),
-                'username'    => $i->post('username'),
-                'password'    => SHA1($i->post('password')), // Enkripsi pw dengan SHA1
-                'akses_level' => $i->post('akses_level')
-            );
+            if (strlen($i->post('password')) >= 6) {
+                $data = array(
+                    'id_user'     => $id_user,
+                    'nama'        => $i->post('nama'),
+                    'email'       => $i->post('email'),
+                    'username'    => $i->post('username'),
+                    'password'    => SHA1($i->post('password')),
+                    'akses_level' => $i->post('akses_level')
+                );
+            } else {
+                // Kalo password kurng dari 6 maka tidak diganti
+                $data = array(
+                    'id_user'     => $id_user,
+                    'nama'        => $i->post('nama'),
+                    'email'       => $i->post('email'),
+                    'username'    => $i->post('username'),
+                    'akses_level' => $i->post('akses_level')
+                );
+                // End data update
+                $this->user_model->edit($data);
+                $this->session->set_flashdata('warning', 'Update user tanpa ganti password berhasil');
+                redirect(base_url('admin/user'), 'refresh'); //Maka redirect ke halaman sukses
+            }
             $this->user_model->edit($data);
             $this->session->set_flashdata('sukses', 'Data telah diedit.');
             redirect(base_url('admin/user'), 'refresh');

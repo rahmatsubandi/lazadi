@@ -81,6 +81,17 @@
      $('.datepicker').on('cancel.daterangepicker', function(ev, picker) {
          $(this).val('');
      });
+
+     // Alert
+     window.setTimeout(function() {
+         $(".alert").fadeTo(500, 0).slideUp(500, function() {
+             $(this).remove();
+         });
+     }, 3000);
+
+     $(function() {
+         $('[data-toggle="tooltip"]').tooltip()
+     })
  </script>
 
  </body>

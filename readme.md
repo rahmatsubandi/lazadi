@@ -12,9 +12,9 @@ Password : aa
 
 ### User1
 
-Email : wd@gmail.com
+Email : test1@gmail.com
 
-Password : 123456
+Password : test1
 
 ### User2
 
